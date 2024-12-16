@@ -1,0 +1,590 @@
+/* General styles */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('images/bsu-main.png') no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+/* Navbar styling */
+.navbar {
+    background: url('images/green-leaf.jpg') no-repeat center center fixed;
+    background-size: cover; /* This makes sure the image covers the entire background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid greenyellow;
+    position: fixed; /* Make navbar fixed */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Span full width */
+    z-index: 1000; /* Make sure it's above other elements */
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.7); /* Optional shadow */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.brand h1 {
+    color: #006400;
+    margin: 0; /* Remove default margin */
+}
+
+.nav-icons {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between icons */
+}
+
+.nav-icons a {
+    display: flex; /* Use flexbox for icon alignment */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Default color for icons */
+    font-size: 18px; /* Font size for icons */
+}
+
+.nav-icons a:hover {
+    color: #45a049; /* Change color on hover */
+}
+
+.account-btn {
+    background-color: #228b22; /* Green background for ACC button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Main container styling */
+main {
+    display: flex;
+    height: calc(100vh - 60px); /* Adjust height for the navbar */
+    margin-top: 60px; /* Add margin-top to avoid overlap with fixed navbar */
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #228b22;
+    width: 20%; /* Sidebar takes 20% of the width */
+    padding: 20px;
+    height: 100%; /* Full height */
+    position: fixed; /* Fixed position for sidebar */
+    top: 57px; /* Below the navbar */
+    left: 0; /* Align to the left */
+    overflow-y: auto; /* Enable scrolling if needed */
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.7); /* Optional shadow */
+    border-right: 1px solid #ffffff; /* Optional border for separation */
+    
+}
+
+.sidebar h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 45px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.sidebar h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 45px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 30px 0;
+    color: white;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content area styling */
+.content {
+    /* This makes sure the image covers the entire background */
+    flex-grow: 1;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+    overflow-y: auto; /* Enable scrolling for the content */
+}
+
+/* Input box styling */
+.input-box {
+    background-color: rgba(60, 60, 60, 0.550);
+    border-radius: 210px;
+    padding: 10px;
+    max-width: 600px;
+    margin: 50px auto; /* Center align */
+    transform: translateX(25.5%); /* Shift input box to the right */
+    padding-right: 100px;
+}
+
+.input-box input {
+    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    width: 111.5%;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.white-line {
+    background-color: white;    /* Kulay ng linya */
+    height: 2px;                /* Kapal ng linya, i-adjust mo dito */
+    width: 50%;                /* Haba ng linya (100% ng container) */
+    margin-top: -30px;
+    margin-left: 400px;
+    padding-left: 280px;
+    position: relative;         /* Posibilidad ng paglipat gamit ang position */
+}
+
+/* Settings button styling */
+.settings-btn {
+    position: fixed; /* Make it fixed */
+    bottom: 20px; /* Position from the bottom */
+    right: 20px; /* Position from the right */
+    padding: 10px 15px; /* Add padding for a larger button */
+    background-color: #228b22; /* Background color */
+    color: white; /* Font color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add cursor effect */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.settings-btn:hover {
+    background-color: #228b22; /* Hover color */
+}
+
+/* Subtopics styling */
+.subtopics {
+    display: none; /* Hide subtopics initially */
+    padding-left: 20px; /* Indent subtopics */
+}
+
+.subtopics.show {
+    display: block; /* Show subtopics when toggled */
+    transition: max-height 0.3s ease-in-out; /* Smooth transition */
+}
+
+.sidebar .subtopics li {
+    margin-bottom: 8px; /* Space between subtopics */
+    padding-left: 20px; /* Indent subtopics slightly for visual clarity */
+}
+
+/* Increase font size for main topics in the Categories sidebar */
+.sidebar ul > li > a {
+    font-size: 16px; /* Larger font for main topics */
+    font-weight: bold;
+}
+
+/* Increase font size for subtopics */
+.sidebar .subtopics li {
+    font-size: 15px; /* Larger font for subtopics */
+}
+
+
+/* ACC Button Style */
+.account-btn {
+    background-color: #4CAF50; /* Green background for ACC button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.account-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Dropdown Menu Style */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    right: 0; /* Align dropdown to the right */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 150px; /* Minimum width */
+    z-index: 1;
+    font-family: Arial, sans-serif;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: #333; /* Dark text color */
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+
+/* Additional styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    overflow: auto;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #888;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #888;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+display: none; /* Keep it hidden by default */
+position: absolute;
+right: 0; /* Aligns the dropdown to the right side */
+background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Add a shadow */
+z-index: 1; /* Ensure it sits on top */
+border-radius: 10px; /* Rounded corners */
+margin-top: 10px; /* Space between button and dropdown */
+min-width: 120px; /* Ensure the dropdown has a minimum width */
+}
+
+.dropdown-content a {
+color: red;
+padding: 12px 20px; /* Increased padding to left and right */
+text-decoration: none;
+display: block;
+white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.dropdown-content a:hover {
+text-decoration: underline; /* Underline only on hover */
+}
+.content {
+display: flex;
+justify-content: flex-end; /* Align to the right */
+align-items: center; /* Vertically center */
+height: 100vh; /* Full viewport height */
+padding: 20px;
+}
+
+.main-container {
+display: flex;
+flex-direction: column; /* Stack input box above the posts container */
+align-items: center; /* Center horizontally */
+justify-content: center; /* Center vertically if needed */
+width: 100%; /* Full width of the viewport */
+height: 100vh; /* Full height of the viewport */
+}
+
+
+/* Hide the default file input */
+.post-file-input {
+display: none;
+}
+
+/* Style the label as a button */
+.file-btn {
+background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+color: white;
+padding: 10px 20px; /* Padding for size */
+border-radius: 10px; /* Rounded corners */
+font-size: 16px;
+cursor: pointer; /* Pointer cursor for interactivity */
+text-align: center;
+display: inline-block; /* Behaves like a button */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the file button */
+.file-btn:hover {
+background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+/* Submit Button */
+.post-btn {
+background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black for depth */
+color: white;
+border: none; /* Remove border */
+padding: 10px 20px; /* Padding for a balanced size */
+border-radius: 10px; /* Rounded corners */
+font-size: 16px; /* Readable font size */
+cursor: pointer; /* Pointer cursor on hover */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.post-btn:hover {
+background-color: rgba(0, 0, 0, 0.8); /* Darker on hover for contrast */
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+/* Textarea styling */
+.post-textarea {
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border-radius: 8px;
+border: 1px solid #ccc;
+font-size: 16px;
+resize: none;
+
+}/* Input box */
+.input-box {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+width: 600px; /* Fixed width to match posts-container */
+max-width: 90%; /* Adjust for smaller screens */
+position: absolute; /* Allows positioning relative to the viewport */
+top: 10%; /* Adjust height from the top */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Correct horizontal centering */
+}
+
+/* Posts container */
+.posts-container {
+    width: 100%; /* Matches the width of .input-box */
+    max-width: 600px; /* Keep the same max-width to maintain alignment */
+    margin-top: 5px; /* Even less space below .input-box */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: none; /* Subtle shadow */
+    position: absolute; /* Position relative to .input-box */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct horizontal centering */
+    top: calc(10% + 20px); /* Move even higher up */
+}
+
+/* Posts list */
+.posts-list {
+    display: flex;
+    flex-direction: column; /* Stack posts vertically */
+    gap: 15px; /* Maintain the same gap between posts */
+}
+
+/* Individual post item */
+.post-item {
+    background-color: rgba(255, 255, 255, 0.8); /* White background for each post */
+    padding: 25px; /* Increased inner padding for post content */
+    border-radius: 10px; /* Rounded corners for posts */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for posts */
+    margin-bottom: 15px; /* Maintain the same space below each post */
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Set a maximum width */
+    font-size: 18px; /* Increased font size for better readability */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Paragraph inside post item */
+.post-item p {
+    word-wrap: break-word; /* Allows long words to break */
+    overflow-wrap: break-word; /* For modern browsers */
+    white-space: normal; /* Ensure text can wrap normally */
+    word-break: break-all; /* Break words at any character to prevent overflow */
+}
+
+/* Post image */
+.post-image {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Slightly rounded corners for images */
+}
+    /* Overlay container style */
+    .overlay-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+    
+    .overlay-content {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px; /* Adjust width as needed */
+    }
+
+/* Style for overlay images */
+.overlay-image {
+    display: block;
+    margin-bottom: 15px; /* Space between images */
+    max-width: 90%; /* Responsive to the container */
+    max-height: 80vh; /* Prevents the image from exceeding the viewport height */
+    object-fit: contain; /* Maintain original aspect ratio */
+}/* Sidebar styling */
+.sidebar {
+    background-color: #228b22;
+    width: 250px; /* Sidebar width when expanded */
+    padding: 20px;
+    height: 100%; /* Full height */
+    position: fixed; /* Fixed position for sidebar */
+    top: 57px; /* Below the navbar */
+    left: 0; /* Align to the left */
+    overflow-y: auto; /* Enable scrolling if needed */
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.7); /* Optional shadow */
+    border-right: 1px solid #ffffff; /* Optional border for separation */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+/* Collapsed state */
+.sidebar.collapsed {
+    transform: translateX(-100%); /* Move sidebar out of view */
+    display: none; /* Completely hide the sidebar */
+}
+
+/* Arrow button styling */
+.arrow-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    margin: 10px; /* Add some margin */
+    position: fixed; /* Positioning it absolutely */
+    left: 10px; /* Align to the left */
+    top: 50%; /* Align to the center vertically */
+    transform: translateY(-50%); /* Align to the center vertically */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.toggle-sidebar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    margin: 10px; /* Add some margin */
+}.arrow-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    margin: 10px; /* Add some margin */
+    position: fixed; /* Positioning it absolutely */
+    left: 10px; /* Align to the left */
+    top: 50%; /* Align to the center vertically */
+    transform: translateY(-50%); /* Align to the center vertically */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.arrow-btn i {
+    color: #228b22; /* Match the sidebar background color */
+}.comment-item {
+    position: relative; /* Allows positioning of the flag */
+    padding-left: 30px; /* Add padding to avoid overlap with the flag */
+}
+
+.flag {
+    position: absolute; /* Position the flag to the left of the comment */
+    left: 5px; /* Adjust as necessary to fit your design */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    font-size: 20px; /* Size of the flag icon */
+    display: none; /* Initially hidden */
+}
+.reported-comment {
+    color: red; /* Change text color to red */
+    font-weight: bold; /* Make it bold for emphasis */
+}
